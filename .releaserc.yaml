@@ -1,0 +1,44 @@
+branches: ['main']
+ci: true
+debug: true
+dryRun: false
+tagFormat: '${version}'
+
+preset: 'conventionalcommits'
+githubUrl: 'https://api.github.com/'
+
+verifyConditions:
+  - '@semantic-release/changelog'
+  - '@semantic-release/git'
+  - '@semantic-release/github'
+  - 'semantic-release-slack-bot'
+
+analyzeCommits:
+  - path: '@semantic-release/commit-analyzer'
+
+generateNotes:
+  - path: '@semantic-release/release-notes-generator'
+    writerOpts:
+      groupBy: 'type'
+      commitGroupsSort: 'title'
+      commitsSort: 'header'
+    linkCompare: true
+    linkReferences: true
+
+prepare:
+  - path: '@semantic-release/changelog'
+  - path: '@semantic-release/git'
+    message: 'RELEASE: ${nextRelease.version}'
+    assets: ['CHANGELOG.md']
+
+publish:
+  - path: '@semantic-release/github'
+
+success:
+  - path: 'semantic-release-slack-bot'
+    notifyOnSuccess: true
+    markdownReleaseNotes: false
+
+fail:
+  - path: 'semantic-release-slack-bot'
+    notifyOnFail: true

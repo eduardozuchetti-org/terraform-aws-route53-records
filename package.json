@@ -1,0 +1,38 @@
+{
+  "name": "terraform-aws-route53-records",
+  "description": "This is just a template repo for terraform modules",
+  "version": "1.0.0",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/eduardozuchetti-org/terraform-aws-route53-records.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eduardozuchetti-org/terraform-aws-route53-records/issues"
+  },
+  "homepage": "https://github.com/eduardozuchetti-org/terraform-aws-route53-records#readme",
+  "dependencies": {
+    "@semantic-release/changelog": "^6.0.2",
+    "@semantic-release/commit-analyzer": "^9.0.2",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/gitlab": "^12.0.0",
+    "@semantic-release/npm": "^9.0.2",
+    "@semantic-release/release-notes-generator": "^10.0.3",
+    "conventional-changelog-conventionalcommits": "^5.0.0",
+    "semantic-release-cli": "^5.4.4",
+    "semantic-release-slack-bot": "^4.0.0"
+  },
+  "devDependencies": {
+    "@semantic-release/github": "^8.0.7",
+    "cz-conventional-changelog": "^3.3.0",
+    "git-cz": "^4.9.0",
+    "semantic-release": "^20.1.1"
+  }
+}
